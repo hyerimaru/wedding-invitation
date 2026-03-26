@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 오프닝 오버레이 -->
+  <div id="openingOverlay" class="opening-overlay">
+    <div class="opening-card">
+      <div class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="letter">
+          <p id="openingTitle">Wedding Invitation</p>
+          <p id="openingSubtitle">초대장을 열어보세요</p>
+        </div>
+      </div>
+      <button id="openInvitationBtn" class="primary-btn">OPEN</button>
+    </div>
+  </div>
+
+  <!-- 메인 컨텐츠 -->
+  <main id="app" class="app blur">
+    <!-- 언어 전환 -->
+    <header class="top-bar">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang-btn="ko">한국어</button>
+        <button class="lang-btn" data-lang-btn="ja">日本語</button>
+      </div>
+    </header>
+
+    <!-- 화면 2: 메인 비주얼 -->
+    <section id="mainVisual" class="section hero-section">
+      <div class="hero-slider">
+        <div class="slides" id="slides">
+          <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80" alt="wedding photo 1">
+          </div>
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="wedding photo 2">
+          </div>
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="wedding photo 3">
+          </div>
+        </div>
+
+        <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide">‹</button>
+        <button class="slider-btn next" id="nextSlide" aria-label="Next slide">›</button>
+
+        <div class="hero-overlay">
+          <p id="heroBadge" class="hero-badge">Wedding Day</p>
+          <h1 id="heroNames">신랑 콘도 유이치 · 신부 박혜린</h1>
+          <p id="heroDate">2026년 7월 4일 토요일 오전 10시</p>
+          <p id="heroVenue">오오미야 아트그레이스 웨딩홀</p>
+        </div>
+
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <!-- 일본어 전용: 초대 메시지 -->
+    <section id="introMessage" class="section card-section" data-lang="ja">
+      <div class="card">
+        <h2 id="introTitle">초대의 말씀</h2>
+        <p id="introBody1" class="message-text">
+          서로 다른 길을 걸어오던 두 사람이 만나
+          이제 같은 길을 함께 걸어가고자 합니다.
+        </p>
+        <p id="introBody2" class="message-text">
+          소중한 여러분을 모시고
+          기쁜 날의 순간을 함께 나누고 싶습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 디데이 -->
+    <section id="ddaySection" class="section card-section">
+      <div class="card center">
+        <h2 id="ddayTitle">Wedding Day Countdown</h2>
+        <p id="ddayLabel">결혼식까지 남은 시간</p>
+
+        <div class="countdown" id="countdown">
+          <div class="count-item">
+            <span id="days">0</span>
+            <small id="daysLabel">일</small>
+          </div>
+          <div class="count-item">
+            <span id="hours">0</span>
+            <small id="hoursLabel">시간</small>
+          </div>
+          <div class="count-item">
+            <span id="minutes">0</span>
+            <small id="minutesLabel">분</small>
+          </div>
+          <div class="count-item">
+            <span id="seconds">0</span>
+            <small id="secondsLabel">초</small>
+          </div>
+        </div>
+
+        <p id="ddayFooter" class="muted">2026.07.04 10:00</p>
+      </div>
+    </section>
+
+    <!-- 예식 안내 -->
+    <section id="infoSection" class="section card-section">
+      <div class="card">
+        <h2 id="infoTitle">예식 안내</h2>
+
+        <div class="info-list">
+          <div class="info-row">
+            <span id="labelDate" class="info-label">날짜</span>
+            <span id="valueDate" class="info-value">2026년 7월 4일 (토)</span>
+          </div>
+          <div class="info-row">
+            <span id="labelTime" class="info-label">시간</span>
+            <span id="valueTime" class="info-value">오전 10시 00분</span>
+          </div>
+          <div class="info-row">
+            <span id="labelVenue" class="info-label">장소</span>
+            <span id="valueVenue" class="info-value">오오미야 아트그레이스 웨딩홀</span>
+          </div>
+          <div class="info-row">
+            <span id="labelAddress" class="info-label">주소</span>
+            <span id="valueAddress" class="info-value">埼玉県さいたま市北区植竹町1丁目816-7</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 오시는 길 -->
+    <section id="mapSection" class="section card-section">
+      <div class="card">
+        <h2 id="mapTitle">오시는 길</h2>
+
+        <div class="map-embed">
+            <iframe
+              id="weddingMap"
+              title="Wedding venue map"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="">
+            </iframe>
+        </div>
+
+        <p id="mapAddress" class="map-address">埼玉県さいたま市北区植竹町1丁目816-7</p>
+
+      </div>
+    </section>
+
+    <!-- 갤러리 -->
+    <section id="gallerySection" class="section card-section">
+      <div class="card">
+        <h2 id="galleryTitle">갤러리</h2>
+
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="gallery 1">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="gallery 2">
+          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="gallery 3">
+          <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=600&q=80" alt="gallery 4">
+          <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80" alt="gallery 5">
+          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80" alt="gallery 6">
+        </div>
+      </div>
+    </section>
+
+    <!-- 참석 여부 -->
+    <section id="rsvpSection" class="section card-section">
+      <div class="card">
+        <h2 id="rsvpTitle">참석 여부 회신</h2>
+
+        <form id="rsvpForm" class="rsvp-form">
+            <label>
+              <span id="formNameLabel">이름</span>
+              <input type="text" name="name" required maxlength="100" autocomplete="name" />
+            </label>
+          
+            <label>
+              <span id="formPhoneLabel">전화번호</span>
+              <input type="tel" name="phone" required maxlength="30" autocomplete="tel" />
+            </label>
+          
+            <label>
+              <span id="formEmailLabel">이메일</span>
+              <input type="email" name="email" required maxlength="255" autocomplete="email" />
+            </label>
+          
+            <label>
+              <span id="formAttendanceLabel">참석 여부</span>
+              <select name="attendance" required>
+                <option value="">선택해주세요</option>
+                <option value="yes">참석</option>
+                <option value="no">불참</option>
+              </select>
+            </label>
+          
+            <label>
+              <span id="formMessageLabel">메시지</span>
+              <textarea name="message" rows="4" maxlength="1000"></textarea>
+            </label>
+          
+            <label class="checkbox-row">
+              <input type="checkbox" name="privacy" required />
+              <span id="privacyLabel">개인정보 수집 및 이용에 동의합니다.</span>
+            </label>
+          
+            <input
+              type="text"
+              name="_gotcha"
+              class="hidden-honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+          
+            <button type="submit" class="primary-btn block-btn" id="submitBtn">제출하기</button>
+          </form>
+          
+          <p id="formStatus" class="muted" aria-live="polite"></p>
+        </p>
+      </div>
+    </section>
+
+    <!-- 한국어 전용: 마무리 -->
+    <section id="closingSection" class="section card-section" data-lang="ko">
+      <div class="card center">
+        <h2 id="closingTitle">감사합니다</h2>
+        <p id="closingMessage" class="message-text">
+          소중한 걸음으로 함께해주셔서 진심으로 감사드립니다.
+        </p>
+        <p id="closingNames">신랑 콘도 유이치 · 신부 박혜린</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+    window.formspree =
+      window.formspree ||
+      function () {
+        (formspree.q = formspree.q || []).push(arguments);
+      };
+    formspree('initForm', {
+      formElement: '#rsvpForm',
+      formId: window.CONFIG?.FORMSPREE_FORM_ID || ''
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <script src="script.js"></script>
+</body>
+</html>
