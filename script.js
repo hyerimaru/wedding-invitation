@@ -26,7 +26,7 @@ const texts = {
       valueAddress: "사이타마현 사이타마시 키타구 우에타케초 1-816-7",
   
       mapTitle: "오시는 길",
-      mapAddress: "사이타마현 사이타마시 키타구 우에타케초 1-816-7",
+      busAnnounce: "셔틀버스 안내",
   
       galleryTitle: "갤러리",
   
@@ -35,6 +35,7 @@ const texts = {
       formEmailLabel: "이메일",
       formAttendanceLabel: "참석 여부",
       formMessageLabel: "메시지",
+      formMessagePlaceholder: "음식 알레르기 등이 있으신분은 반드시 기재해 주세요",
       privacyLabel: "개인정보 수집 및 이용에 동의합니다.",
       submitBtn: "제출하기",
   
@@ -85,7 +86,7 @@ const texts = {
       valueAddress: "埼玉県さいたま市北区植竹町1丁目816-7",
   
       mapTitle: "アクセス",
-      mapAddress: "埼玉県さいたま市北区植竹町1丁目816-7",
+      busAnnounce: "シャトルバス案内",
   
       galleryTitle: "ギャラリー",
   
@@ -94,6 +95,7 @@ const texts = {
       formEmailLabel: "メールアドレス",
       formAttendanceLabel: "ご出欠",
       formMessageLabel: "メッセージ",
+      formMessagePlaceholder: "アレルギなどがございましたら ご記入くださいませ",
       privacyLabel: "個人情報の収集および利用に同意します",
       submitBtn: "送信する",
   
@@ -181,7 +183,7 @@ const texts = {
     document.getElementById("valueAddress").textContent = t.valueAddress;
   
     document.getElementById("mapTitle").textContent = t.mapTitle;
-    document.getElementById("mapAddress").textContent = t.mapAddress;
+    document.getElementById("busAnnounce").textContent = t.busAnnounce;
   
     document.getElementById("galleryTitle").textContent = t.galleryTitle;
   
@@ -190,6 +192,7 @@ const texts = {
     document.getElementById("formEmailLabel").textContent = t.formEmailLabel;
     document.getElementById("formAttendanceLabel").textContent = t.formAttendanceLabel;
     document.getElementById("formMessageLabel").textContent = t.formMessageLabel;
+    document.getElementById("formMessagePlaceholder").placeholder = t.formMessagePlaceholder;
     document.getElementById("privacyLabel").textContent = t.privacyLabel;
     document.getElementById("submitBtn").textContent = t.submitBtn;
   
@@ -339,8 +342,7 @@ const texts = {
     nextSlide();
     restartSlider();
   });
-  
-  
+
   // ---------- 초기화 ----------
   function init() {
     const savedLang = localStorage.getItem("wedding_lang");
@@ -356,6 +358,35 @@ const texts = {
   }
   
   init();
+
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+
+  // 이미지 클릭 → 모달 열기
+  galleryImages.forEach((img) => {
+  img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.remove("hidden");
+  });
+  });
+
+  // 모달 클릭 → 닫기
+  modal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modalImg.src = "";
+  });
+  img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+  });
+  
+  modal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modalImg.src = "";
+      document.body.style.overflow = "";
+  });
 
   
 
