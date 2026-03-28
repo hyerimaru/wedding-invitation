@@ -8,10 +8,6 @@ const texts = {
       heroDate: "2026년 7월 4일 토요일 오전10시30분",
       heroVenue: "아트그레이스 웨딩홀",
   
-      introTitle: "초대의 말씀",
-      introBody1: "서로 다른 길을 걸어오던 두 사람이 만나 이제 같은 길을 함께 걸어가고자 합니다",
-      introBody2: "소중한 여러분을 모시고 기쁜 날의 순간을 함께 나누고 싶습니다",
-  
       ddayTitle: "Wedding Day Countdown",
       ddayLabel: "결혼식까지 남은 시간",
       daysLabel: "일",
@@ -36,7 +32,6 @@ const texts = {
   
       rsvpTitle: "참석 여부 회신",
       formNameLabel: "이름",
-      formPhoneLabel: "전화번호",
       formEmailLabel: "이메일",
       formAttendanceLabel: "참석 여부",
       formMessageLabel: "메시지",
@@ -63,9 +58,14 @@ const texts = {
       heroDate: "2026年7月04日（土）午前10時30分",
       heroVenue: "大宮アートグレイス ウエディングシャトー",
   
-      introTitle: "ご挨拶",
-      introBody1: "それぞれの道を歩んできた二人が出会い、これから同じ未来へ歩んでいくことになりました",
-      introBody2: "大切な皆さまをお招きし、喜びの日をともに過ごせましたら幸いです",
+      introTitle: "拝啓",
+      introBody1: "春の候 皆様におかれましてはますますご清祥のこととお慶び申し上げます",
+      introBody2: "さて このたび私たちは結婚式を挙げることとなりました",
+      introBody3: "日頃お世話になっております皆様に感謝の気持ちを込めて",
+      introBody4: "ささやかながら披露の席を設けさせていただきました",
+      introBody5: "ご多用中誠に恐縮ではございますが",
+      introBody6: "ぜひご出席賜りますようご案内申し上げます",
+      introBody7: "敬具",
   
       ddayTitle: "Wedding Day Countdown",
       ddayLabel: "結婚式まで残り",
@@ -91,7 +91,6 @@ const texts = {
   
       rsvpTitle: "ご出欠のご返信",
       formNameLabel: "お名前",
-      formPhoneLabel: "電話番号",
       formEmailLabel: "メールアドレス",
       formAttendanceLabel: "ご出欠",
       formMessageLabel: "メッセージ",
@@ -158,6 +157,11 @@ const texts = {
     document.getElementById("introTitle").textContent = t.introTitle;
     document.getElementById("introBody1").textContent = t.introBody1;
     document.getElementById("introBody2").textContent = t.introBody2;
+    document.getElementById("introBody3").textContent = t.introBody3;
+    document.getElementById("introBody4").textContent = t.introBody4;
+    document.getElementById("introBody5").textContent = t.introBody5;
+    document.getElementById("introBody6").textContent = t.introBody6;
+    document.getElementById("introBody7").textContent = t.introBody7;
   
     document.getElementById("ddayTitle").textContent = t.ddayTitle;
     document.getElementById("ddayLabel").textContent = t.ddayLabel;
@@ -183,7 +187,6 @@ const texts = {
   
     document.getElementById("rsvpTitle").textContent = t.rsvpTitle;
     document.getElementById("formNameLabel").textContent = t.formNameLabel;
-    document.getElementById("formPhoneLabel").textContent = t.formPhoneLabel;
     document.getElementById("formEmailLabel").textContent = t.formEmailLabel;
     document.getElementById("formAttendanceLabel").textContent = t.formAttendanceLabel;
     document.getElementById("formMessageLabel").textContent = t.formMessageLabel;

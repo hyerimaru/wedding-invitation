@@ -63,15 +63,14 @@
     <!-- 일본어 전용: 초대 메시지 -->
     <section id="introMessage" class="section card-section" data-lang="ja">
       <div class="card">
-        <h2 id="introTitle">초대의 말씀</h2>
-        <p id="introBody1" class="message-text">
-          서로 다른 길을 걸어오던 두 사람이 만나
-          이제 같은 길을 함께 걸어가고자 합니다.
-        </p>
-        <p id="introBody2" class="message-text">
-          소중한 여러분을 모시고
-          기쁜 날의 순간을 함께 나누고 싶습니다.
-        </p>
+        <h2 id="introTitle"></h2>
+        <p id="introBody1" class="message-text"></p>
+        <p id="introBody2" class="message-text"></p>
+        <p id="introBody3" class="message-text"></p>
+        <p id="introBody4" class="message-text"></p>
+        <p id="introBody5" class="message-text"></p>
+        <p id="introBody6" class="message-text"></p>
+        <p id="introBody7" class="message-text"></p>
       </div>
     </section>
 
@@ -110,6 +109,7 @@
         <h2 id="infoTitle">예식 안내</h2>
 
         <div class="info-list">
+          <img src="images/wedding_space.png" alt="결혼식장 이미지">
           <div class="info-row">
             <span id="labelDate" class="info-label">날짜</span>
             <span id="valueDate" class="info-value">2026년 7월 4일 (토)</span>
@@ -157,11 +157,11 @@
         <h2 id="galleryTitle">갤러리</h2>
 
         <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="gallery 1">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="gallery 2">
-          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="gallery 3">
-          <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=600&q=80" alt="gallery 4">
-          <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80" alt="gallery 5">
+          <img src="images/dress_blue.JPG" alt="gallery 1">
+          <img src="images/dress_yello.jpeg" alt="gallery 2">
+          <img src="images/dress_black.JPG" alt="gallery 3">
+          <img src="images/dress_naby.JPG" alt="gallery 4">
+          <img src="images/dress_red.JPG" alt="gallery 5">
           <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80" alt="gallery 6">
         </div>
       </div>
@@ -176,11 +176,6 @@
             <label>
               <span id="formNameLabel">이름</span>
               <input type="text" name="name" required maxlength="100" autocomplete="name" />
-            </label>
-          
-            <label>
-              <span id="formPhoneLabel">전화번호</span>
-              <input type="tel" name="phone" required maxlength="30" autocomplete="tel" />
             </label>
           
             <label>
